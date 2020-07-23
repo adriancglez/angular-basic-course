@@ -8,12 +8,12 @@ Un componente en Angular, son pequeñas clases normales que cumplen una tarea es
 
 Son instrucciones que indican a la parte del HTML qué tiene que hacer.
 
-## Directiva *ngIF
+## Directiva *ngIf
 
 La directiva *ngIf es la que se encarga de mostrar u ocultar elementos HTML en la página web. La sintaxis es:
 
     *ngIf = "TRUE"
-    *ngIF = "FALSE"
+    *ngIf = "FALSE"
 
 ## Directiva *ngFor
 
