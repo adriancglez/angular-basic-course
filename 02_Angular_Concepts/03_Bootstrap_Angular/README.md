@@ -36,7 +36,7 @@ Existen diferentes formas de crear componentes, pero es una buena práctica, que
     }
     ~~~
 
-6. Anotar la clase con el decorador `@Component` y asignar las configuraciones necesarias: `selector` y `template`
+6. Anotar la clase con el decorador `@Component` y asignar las configuraciones necesarias: `selector` y `template` ó `templateUrl`
 
     ~~~
     @Component({
@@ -59,6 +59,8 @@ Existen diferentes formas de crear componentes, pero es una buena práctica, que
     }
     ~~~
 
+    **Nota:** Existen dos formas de insertar contenido `HTML`, ya sea con `template` ó `templateUrl`. `template` inserta directamente el HTML literal, en `templateUrl` se asigna una URL que apunta a un archivo `.html` que contiene el código HTML a mostrar.
+
 7. Definir que la clase será exportada con la palabra reservada `export` en la clase.
 
     ~~~
@@ -80,6 +82,7 @@ Existen diferentes formas de crear componentes, pero es una buena práctica, que
         
     }
     ~~~
+
 8. En el archivo `app.module.ts`, importar el componente creado
 
     ~~~
