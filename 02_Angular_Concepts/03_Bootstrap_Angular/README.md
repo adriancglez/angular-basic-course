@@ -8,7 +8,11 @@ Existen diferentes formas de integrar Bootstrap a un proyecto Angular, la forma 
 
 ## CREAR COMPONENTES
 
-Existen diferentes formas de crear componentes, pero es una buena práctica, que de hecho el equipo de Angular lo recomienda, es la siguiente:
+Existen diferentes formas de crear componentes, manual y automáticamente por comando, pero es una buena práctica, que de hecho el equipo de Angular lo recomienda es por comando.
+
+### FORMA MANUAL
+
+La forma manual es la siguiente:
 
 1. Dentro de la carpeta `src/app`, crear una carpeta llamada `components`.
 2. Dentro de la carpeta `components`, crear una carpeta con el nombre del componente.
@@ -103,3 +107,15 @@ Existen diferentes formas de crear componentes, pero es una buena práctica, que
     ~~~
     <app-name></app-name>
     ~~~
+
+### FORMA AUTOMÁTICA (POR COMANDO)
+
+Para crear componentes usando los comandos de Angular, ejecutar el comando desde la consola:
+
+> ng generate component path/component-name
+
+ó de forma resumida:
+
+> ng g c path/component-name
+
+**Nota:** Es de buena práctica que exista una carpeta que contenga los componentes, dicha carpeta se debe llamar `components`, dentro de ella los componentes orgnaizados por carpetas.
