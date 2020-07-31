@@ -77,3 +77,40 @@ Usando el comando CLI para crear componentes, creamos dos componentes con los no
 > ng g c components/heroes
 
 respectivamente.
+
+### RUTAS
+
+Las rutas nos permiten navegar a diferentes componentes sin recargar el navegador.
+
+Existen diferentes formas de trabajar con las rutas, la más recomendada es crear un archivo de rutas en la carpeta `src/app` con el nombre `app.routes.ts`.
+
+Dentro de ese archivo declarar las rutas con la sintaxis:
+
+~~~
+import { RouterModule, Routes } from '@angular/router';
+
+const APP_ROUTES: Routes = [
+  { path: 'path', component: Component },
+  { path: '**', pathMatch: 'full', redirectTo: '' }
+];
+
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
+~~~
+
+En el archivo `app.module.ts` importar el archivo de rutas y declararlo en el array `imports`:
+
+    ...
+    /* Rutas */
+    import { APP_ROUTING } from './app.routes';
+    ...
+    ...
+    imports: [
+        ...
+        APP_ROUTING,
+        ...
+    ],
+    ...
+
+En el archivo `app.component.html` invocar a la etiqueta:
+> \<router-outlet>\</router-outlet>
+
