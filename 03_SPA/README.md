@@ -114,3 +114,59 @@ En el archivo `app.module.ts` importar el archivo de rutas y declararlo en el ar
 En el archivo `app.component.html` invocar a la etiqueta:
 > \<router-outlet>\</router-outlet>
 
+### SERVICIOS
+
+Una forma de modularizar nuestra aplicación o mantener persistencia de data es por medio de servicios.
+
+Los servicios tienen características principales:
+
+* Brindar información a quien lo necesite.
+* Realizar peticiones CRUD (create, read, update, delete).
+* Mantener la data de forma persistente.
+* Servir como recurso re-utilizable para nuestra aplicación.
+
+Una buena práctica es crear nuestros servicios en la carpeta `services` dentro de la carpeta `app`, siguiendo la misma nomenclatura que los componentes.
+
+> myServiceClass.service.ts
+
+La sintaxis básica para un Servicio
+
+    import { Injectable } from '@angular/core';
+
+    @Injectable()
+    export class MyServiceClassService {
+
+        constructor() {
+            ...
+        }
+
+        ...
+    }
+
+Declarar e importar en `app.module.ts` e invocar en el array `providers`.
+
+    import { MyServiceClassService } from './services/myServiceClass.service';
+
+    ...
+    providers: [
+        MyServiceClassService,
+        ...
+    ],
+    ...
+
+### PIPES
+
+Los `pipes` simplemente transforman la data en el template de forma visual, ya que no cambian los valores de nada, simplemente nos ayudan a que nuestra data en la pantalla se visualice un poco mejor.
+
+Los `pipes` disponibles son:
+
+* currency
+* date
+* uppercase
+* json
+* limitTo
+* lowercase
+* async
+* decimal
+* percent
+
