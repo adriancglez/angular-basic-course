@@ -103,19 +103,63 @@
           <td>date: 'MMMM - dd'</td>
           <td>{{ fecha | date: 'MMMM - dd' }}</td>
         </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>
+            date: 'MMMM - dd': '': '{{ idioma }}'
+            <br>
+            <button (click)="idioma = 'es'" class="mr-1 btn btn-primary">Español</button>
+            <button (click)="idioma = 'en'" class="mr-1 btn btn-secondary">Inglés</button>
+            <button (click)="idioma = 'fr'" class="mr-1 btn btn-success">Frances</button>
+          </td>
+          <td>{{ fecha | date: 'MMMM - dd' : '': idioma }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre2 }}</td>
+          <td>
+            capitalizado
+          </td>
+          <td>{{ nombre2 | capitalizado }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre2 }}</td>
+          <td>
+            capitalizado: false
+          </td>
+          <td>{{ nombre2 | capitalizado: false }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>
+            mostrar: {{ mostrarPass }}
+            <br>
+            <button (click)="mostrarPass = !mostrarPass" class="btn btn-info">{{ mostrarPass ? 'Ocultar' : 'Mostrar' }}</button>
+          </td>
+          <td>{{ nombre | password: mostrarPass }}</td>
+        </tr>
       </tbody>
     </table>
     <h4>Slice</h4>
     <ul>
       <li *ngFor="let item of arreglo | slice:2:7">{{ item }}</li>
     </ul>
-    <h3>JSON</h3>
+    <h3 class="mt-4">JSON</h3>
     <hr>
     <div class="row bm-5">
       <div class="col">
         <pre>
           {{heroe | json}}
         </pre>
+      </div>
+    </div>
+    <h3 class="mt-4">DOM Seguro</h3>
+    <hr>
+    <div class="row mb-5">
+      <div class="col">
+        <iframe width="560" height="315" [src]="videoUrl | domseguro" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>

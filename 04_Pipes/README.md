@@ -78,4 +78,20 @@ El `pipe` nos permite trabajar con promesas, es decir, si pintamos una variable 
 
     {{ obj_expression | async }}
 
-### PIPE `DATE`
+### `PIPE` DATE
+
+El `pipe` nos permite formatear de muchas formas una fecha, para que sea visualizada según lo deseemos o necesitemos.
+
+    {{ value_expression | date [ : format [ : timezone [ : locale ] ] ] }}
+
+### `PIPE` PERSONALIZADO
+
+Los `pipes` personalizados consiste en crear nuestros propios `pipes` con nuestras reglas para mostrar la información en el `HTML`.
+
+Para crear nuestros propios `pipes`, debemos ejecutar el comando:
+
+    ng g p pipes/my-pipe
+
+Posteriormente, en el archivo `/pipes/my-pipe.ts` en la función `transform` declarar la lógica para mostrar la data, los argumentos de `transform` son `value`, es la data a transformar, mientras que `...Args[]` son los valores o parámetros que puede recibir el `pipe`.
+
+En el `html`, invocar el `pipe` de forma normal, con el `name` que tiene declarado en el decorador `@Pipe`.
